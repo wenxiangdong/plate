@@ -1,3 +1,12 @@
+import {
+  MARK_BOLD,
+  MARK_CODE,
+  MARK_ITALIC,
+  MARK_STRIKETHROUGH,
+  MARK_SUBSCRIPT,
+  MARK_SUPERSCRIPT,
+  MARK_UNDERLINE,
+} from '@udecode/slate-plugins-basic-marks/src';
 import { ELEMENT_BLOCKQUOTE } from '@udecode/slate-plugins-block-quote';
 import { ELEMENT_CODE_BLOCK } from '@udecode/slate-plugins-code-block';
 import { getSlatePluginType, SPEditor } from '@udecode/slate-plugins-core';
@@ -32,6 +41,13 @@ export const deserializeMD = (editor: SPEditor, content: string) => {
         paragraph: getSlatePluginType(editor, ELEMENT_PARAGRAPH),
         block_quote: getSlatePluginType(editor, ELEMENT_BLOCKQUOTE),
         link: getSlatePluginType(editor, ELEMENT_LINK),
+        inline_code_mark: getSlatePluginType(editor, MARK_CODE),
+        emphasis_mark: getSlatePluginType(editor, MARK_ITALIC),
+        strong_mark: getSlatePluginType(editor, MARK_BOLD),
+        underline: getSlatePluginType(editor, MARK_UNDERLINE),
+        delete_mark: getSlatePluginType(editor, MARK_STRIKETHROUGH),
+        subscript: getSlatePluginType(editor, MARK_SUBSCRIPT),
+        superscript: getSlatePluginType(editor, MARK_SUPERSCRIPT),
         code_block: getSlatePluginType(editor, ELEMENT_CODE_BLOCK),
         ul_list: getSlatePluginType(editor, ELEMENT_UL),
         ol_list: getSlatePluginType(editor, ELEMENT_OL),
